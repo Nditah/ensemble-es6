@@ -12,12 +12,13 @@ import { CronJob } from "cron";
 // import routes
 import database from "./config";
 import {
-  financeApi,
-  generalApi,
-  locationApi,
-  peopleApi,
-  setupApi,
-  workshopApi,
+  countryApi,
+  countyApi,
+  permissionApi,
+  roleApi,
+  settingApi,
+  stateApi,
+  userApi,
 } from "./api";
 
 dotenv.config();
@@ -74,12 +75,14 @@ app.use((req, res, next) => {
 });
 
 // Use Routes
-app.use("/api", financeApi);
-app.use("/api", generalApi);
-app.use("/api", locationApi);
-app.use("/api", peopleApi);
-app.use("/api", setupApi);
-app.use("/api", workshopApi);
+app.use("/api", countryApi);
+app.use("/api", countyApi);
+app.use("/api", permissionApi);
+app.use("/api", roleApi);
+app.use("/api", settingApi);
+app.use("/api", stateApi);
+app.use("/api", userApi);
+
 
 app.use((req, res, next) => {
   res.status(404);
